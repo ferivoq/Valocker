@@ -1,0 +1,26 @@
+import webview
+import psutil
+import ctypes  # Import ctypes for calling Windows API
+
+# Constants for MessageBox function
+MB_ICONERROR = 0x10
+
+def check_valorant_running():
+    """ Check if VALORANT.exe is running """
+    return "VALORANT.exe" in (p.name() for p in psutil.process_iter())
+
+def show_windows_alert(message, title):
+    """ Display a native Windows alert box """
+    ctypes.windll.user32.MessageBoxW(0, message, title, MB_ICONERROR)
+
+def main():
+    if check_valorant_running():
+        # Create a webview window if VALORANT is running
+        webview.create_window('VALORANT Checker', html='<h1>VALORANT is running</h1>', width=300, height=200)
+        webview.start()
+    else:
+        # If VALORANT is not running, show a Windows alert box
+        show_windows_alert("TURN VALORANT ON\nYOU CLOWN", "Error")
+
+if __name__ == '__main__':
+    main()
