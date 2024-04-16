@@ -8,6 +8,9 @@ import createError from "http-errors";
 import axios from "axios";
 import { expressPort } from "../package.json";
 
+import agentsRouter from './api/agentsRouter';
+import lockRouter from './api/lockRouter';
+
 const app = express();
 const router = express.Router();
 
@@ -22,14 +25,8 @@ routes.forEach(({ path, viewName, title }) => {
   router.get(path, (_req, res) => res.render(viewName, { title }));
 });
 
-router.get('/agent', async (req, res, next) => {
-  try {
-    const response = await axios.get('https://valorant-api.com/v1/agents');
-    res.json(response.data);
-  } catch (error) {
-    next(error);
-  }
-});
+app.use("/", agentsRouter);
+app.use("/", lockRouter);
 
 app.set("port", expressPort);
 app.set("views", path.join(__dirname, "..", "views"));

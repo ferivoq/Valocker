@@ -10,8 +10,8 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const http_1 = __importDefault(require("http"));
 const http_errors_1 = __importDefault(require("http-errors"));
-const axios_1 = __importDefault(require("axios"));
 const package_json_1 = require("../package.json");
+const agentsRouter_1 = __importDefault(require("./api/agentsRouter"));
 const app = (0, express_1.default)();
 const router = express_1.default.Router();
 const routes = [
@@ -23,15 +23,7 @@ const routes = [
 routes.forEach(({ path, viewName, title }) => {
     router.get(path, (_req, res) => res.render(viewName, { title }));
 });
-router.get('/agent', async (req, res, next) => {
-    try {
-        const response = await axios_1.default.get('https://valorant-api.com/v1/agents');
-        res.json(response.data);
-    }
-    catch (error) {
-        next(error);
-    }
-});
+app.use("/", agentsRouter_1.default);
 app.set("port", package_json_1.expressPort);
 app.set("views", path_1.default.join(__dirname, "..", "views"));
 app.set("view engine", "ejs");
