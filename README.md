@@ -1,33 +1,29 @@
-# electron-with-express
+# VALOCKER
 
-A simple project demonstrating how to spawn an Express app from Electron as well
-as providing server logs directly in the Electron app.
+## Introduction
+VALOCKER is an instalocker tool designed for the popular game Valorant. It uses a private API to interact with the game, enabling players to automatically select their preferred agents quickly. This tool is built using Express.js and is packaged into an Electron application for a seamless desktop experience.
 
-Express App:
+## Features
+- **Fast Locking:** Automatically locks in your preferred agent as soon as the selection phase starts.
+- **Private API:** Utilizes a custom-built API for efficient communication with the Valorant servers.
+- **User-friendly Interface:** Simple and intuitive interface built with Electron for easy navigation and use.
+- **Customizable:** Users can set their preferences for different agents and maps.
 
-![Express-App](screenshots/express-app.png)
+## Usage
+IT'S NOT USABLE IN IT'S CURRENT STATE!!!!!!!!
 
-Press `CommandOrControl+Shift+L` to show the server log:
-
-![Server-Log](screenshots/server-log.png)
-
-## How to run
-
-- npm install
-- npm run start
-
-## How to package
-
-- npm run pack
-
-NOTE: This assumes `electron-packager` is installed globally
-
-## Author
-
-Frank Hale &lt;frankhale@gmail.com&gt;
-
-Updated on: 8 February 2024
+## Contributions
+Contributions are welcome! If you have improvements or bug fixes, please fork the repository and submit a pull request.
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-MIT - see [LICENSE](LICENSE)
+## Disclaimer
+This tool is created for educational purposes only. Please be aware of the game's terms of service before using this software to modify gameplay.
+
+## Contact
+For support or any queries, you can contact us via [Email](mailto:your-email@example.com).
+
+---
+
+Enjoy playing Valorant with your favorite agents using VALOCKER!
