@@ -22,7 +22,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This tool is created for educational purposes only. Please be aware of the game's terms of service before using this software to modify gameplay.
 
 ## Contact
-For support or any queries, you can contact us via [Email](mailto:your-email@example.com).
+For support or any queries, you can contact me via Discord: @ferivoq.
 
 ---
 
