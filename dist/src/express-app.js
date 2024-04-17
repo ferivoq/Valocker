@@ -12,6 +12,7 @@ const http_1 = __importDefault(require("http"));
 const http_errors_1 = __importDefault(require("http-errors"));
 const package_json_1 = require("../package.json");
 const agentsRouter_1 = __importDefault(require("./api/agentsRouter"));
+const lockRouter_1 = __importDefault(require("./api/lockRouter"));
 const app = (0, express_1.default)();
 const router = express_1.default.Router();
 const routes = [
@@ -24,6 +25,7 @@ routes.forEach(({ path, viewName, title }) => {
     router.get(path, (_req, res) => res.render(viewName, { title }));
 });
 app.use("/", agentsRouter_1.default);
+app.use("/", lockRouter_1.default);
 app.set("port", package_json_1.expressPort);
 app.set("views", path_1.default.join(__dirname, "..", "views"));
 app.set("view engine", "ejs");
